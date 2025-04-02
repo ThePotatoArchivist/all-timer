@@ -1,7 +1,7 @@
 #!/bin/sh
 
 declare -A sizes=(
-    ["favicon.ico"]=48
+    ["../../public/favicon.ico"]=48
     ["icons/android-chrome-192x192.png"]=192
     ["icons/android-chrome-512x512.png"]=512
     ["icons/apple-touch-icon.png"]=180
@@ -13,5 +13,5 @@ declare -A sizes=(
 
 for i in "${!sizes[@]}"; do
     echo "Generating $i"
-    convert -background transparent -size "${sizes[$i]}x${sizes[$i]}" icon.svg "$i"
+    magick -background transparent -size "${sizes[$i]}x${sizes[$i]}" icon.svg "$i"
 done
