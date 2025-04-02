@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import { pd } from '../DateFormat';
+import { pd } from '../dateformat';
 
 function Timer(props: {
     targetTime: Date
@@ -11,7 +11,7 @@ function Timer(props: {
         const interval = setInterval(() => setCurrentTime(Date.now()), 1000);
         return () => clearInterval(interval);
     })
-    
+
     const diff = Math.max(0, props.targetTime.valueOf() - currentTime.valueOf());
     
     const days = Math.floor(diff / (24 * 60 * 60 * 1000));
@@ -39,4 +39,4 @@ function Timer(props: {
     </div>;
 }
 
-export default Timer;
+export { Timer };

@@ -24,4 +24,4 @@ function useLocalStorageState<T>(initialValue: T | (() => T), key: string, overr
     return [state, handleUpdateState];
 }
 
-export default useLocalStorageState;
+export { useLocalStorageState };

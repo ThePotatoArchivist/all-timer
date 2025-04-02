@@ -49,4 +49,4 @@ function Dropdown<T,>(props: {
     </div>
 }
 
-export default Dropdown;
+export { Dropdown };

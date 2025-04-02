@@ -1,9 +1,9 @@
 import { h, Fragment } from 'preact';
-import Timer from './Timer';
+import { Timer } from './components/Timer';
 import { useMemo, useState, useRef, useCallback } from 'preact/hooks';
-import Dropdown from './Dropdown';
-import { DateComponents, formatDate, pd } from '../DateFormat';
-import useLocalStorageState from '../useLocalStorageState';
+import { Dropdown } from './components/Dropdown';
+import { DateComponents, formatDate, pd } from './dateformat';
+import { useLocalStorageState } from './localstorage';
 
 function App () {
 	
@@ -15,15 +15,16 @@ function App () {
 	const [chosenFormat, setChosenFormat] = useLocalStorageState(0, 'chosenFormat');
 
 	const timeOptions = useMemo(() => [
-        ['2025 Kickoff', new Date('2025-01-04T07:00:00')],
+		['2025 Kickoff', new Date('2025-01-04T07:00:00')],
 		['LA Regional', new Date('2025-03-14T07:00:00')],
-		['2025 FIRST Championships', new Date('2025-04-15T09:00:00')],
-        ['2026 Season Revealed', new Date('2025-04-19T10:00:00')],
 		['Minecraft Movie Released', new Date('2025-04-04T00:00:00')],
-        ['Class of 2025 Graduation', new Date('2025-06-12T00:00:00')],
-        ['Windows 10 EOL', new Date('2025-10-14T00:00:00')],
-        ['Class of 2026 Graduation', new Date('2026-06-11T00:00:00')],
-        ['Y2K38', new Date('2038-01-19T03:14:08')],
+		['2025 FIRST Championships', new Date('2025-04-15T09:00:00')],
+		['2026 Season Revealed', new Date('2025-04-19T10:00:00')],
+		['Deltarune Chapters 3 & 4', new Date('2025-06-04T21:00:00')],
+		['Class of 2025 Graduation', new Date('2025-06-12T00:00:00')],
+		['Windows 10 EOL', new Date('2025-10-14T00:00:00')],
+		['Class of 2026 Graduation', new Date('2026-06-11T00:00:00')],
+		['Y2K38', new Date('2038-01-19T03:14:08')],
 	] as [name: string, start: Date][], []);
 
 	const remainingTimeOptions = useMemo(() => timeOptions.filter(([_, date]) => date > new Date()), []);
@@ -79,4 +80,4 @@ function App () {
 	</main>;
 }
 
-export default App;
+export { App };
