@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import { useCallback, useEffect, useState, useRef } from 'preact/hooks';
 import { useHandler } from '@tater-archives/react-use-handler';
 

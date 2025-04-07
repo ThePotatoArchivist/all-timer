@@ -1,6 +1,5 @@
-import { h, Fragment } from 'preact';
 import { Timer } from './components/Timer';
-import { useMemo, useState, useRef, useCallback } from 'preact/hooks';
+import { useMemo, } from 'preact/hooks';
 import { Dropdown } from './components/Dropdown';
 import { DateComponents, formatDate, pd } from './dateformat';
 import { useLocalStorageState } from './localstorage';
@@ -27,8 +26,6 @@ function App () {
 		['Y2K38', new Date('2038-01-19T03:14:08')],
 	] as [name: string, start: Date][], []);
 
-	const remainingTimeOptions = useMemo(() => timeOptions.filter(([_, date]) => date > new Date()), []);
-	
 	const URIchosen = useMemo(() => {
 		if (typeof window === 'undefined') return undefined;
 		const search = window.location.hash.substring(1);

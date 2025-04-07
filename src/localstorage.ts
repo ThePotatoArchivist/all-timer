@@ -1,6 +1,6 @@
-import { StateUpdater, useCallback, useEffect, useState } from 'preact/hooks';
+import { Dispatch, StateUpdater, useCallback, useEffect, useState } from 'preact/hooks';
 
-function useLocalStorageState<T>(initialValue: T | (() => T), key: string, overrideInitial = false): [T, StateUpdater<T>] {
+function useLocalStorageState<T>(initialValue: T | (() => T), key: string, overrideInitial = false): [T, Dispatch<StateUpdater<T>>] {
     const [state, setState] = useState(initialValue);
     
     useEffect(() => {
@@ -13,7 +13,7 @@ function useLocalStorageState<T>(initialValue: T | (() => T), key: string, overr
         }
     }, [key]);
     
-    const handleUpdateState: StateUpdater<T> = useCallback(value => {
+    const handleUpdateState: Dispatch<StateUpdater<T>> = useCallback(value => {
         setState(currentValue => {
             const newValue = (typeof value === 'function') ? (value as (prevState: T) => T)(currentValue) : value;
             localStorage.setItem(key, JSON.stringify(newValue));
