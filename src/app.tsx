@@ -26,31 +26,33 @@ function App () {
 		['Y2K38', new Date('2038-01-19T03:14:08')],
 	] as [name: string, start: Date][], []);
 
+	const remainingTimeOptions = useMemo(() => timeOptions.filter(([_, date]) => date > new Date()), []);
+
 	const URIchosen = useMemo(() => {
 		if (typeof window === 'undefined') return undefined;
 		const search = window.location.hash.substring(1);
-		const index = timeOptions.findIndex(e => e[0].toLowerCase().replaceAll(' ', '-') === search);
+		const index = remainingTimeOptions.findIndex(e => e[0].toLowerCase().replaceAll(' ', '-') === search);
 		return (index === -1) ? undefined : index
 	}, []);
 	
 	const [chosenTime, setChosenTime] = useLocalStorageState(URIchosen ?? 0, 'chosenTime', URIchosen !== undefined);
 	
-	if (!(chosenTime in timeOptions)) {
+	if (!(chosenTime in remainingTimeOptions)) {
 		setChosenTime(0);
 	}
 	
-	const targetTime = useMemo(() => timeOptions[chosenTime] ?? timeOptions[0], [timeOptions, chosenTime]);
+	const targetTime = useMemo(() => remainingTimeOptions[chosenTime] ?? remainingTimeOptions[0], [remainingTimeOptions, chosenTime]);
 	
 	const handleSetTime = (index: number) => {
 		setChosenTime(index);
-		window.location.hash = timeOptions[index][0].toLowerCase().replaceAll(' ', '-');
+		window.location.hash = remainingTimeOptions[index][0].toLowerCase().replaceAll(' ', '-');
 	}
 
 	return <main>
 		<div class="center">
 			<Timer targetTime={targetTime[1]} />
 			<span class="subtitle">until</span>
-			<Dropdown options={timeOptions} value={chosenTime} onInput={handleSetTime}>{(option) => (
+			<Dropdown options={remainingTimeOptions} value={chosenTime} onInput={handleSetTime}>{(option) => (
 				// <div class="option">
 				// 	<div>{option[0]}</div>
 				// 	<div>{formatDate(option[1], dateFormats[chosenFormat])}</div>
