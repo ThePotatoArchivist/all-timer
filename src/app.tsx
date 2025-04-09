@@ -24,6 +24,7 @@ function App () {
 		['Windows 10 EOL', new Date('2025-10-14T00:00:00')],
 		['Class of 2026 Graduation', new Date('2026-06-11T00:00:00')],
 		['Y2K38', new Date('2038-01-19T03:14:08')],
+		['2045 US Eclipse', new Date('2045-08-12T08:12:00')],
 	] as [name: string, start: Date][], []);
 
 	const URIchosen = useMemo(() => {
