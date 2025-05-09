@@ -19,7 +19,7 @@ function App () {
 		['Minecraft Movie Released', new Date('2025-04-04T00:00:00')],
 		['2025 FIRST Championships', new Date('2025-04-15T09:00:00')],
 		['2026 Season Revealed', new Date('2025-04-19T10:00:00')],
-		['Deltarune Chapters 3 & 4', new Date('2025-06-04T21:00:00')],
+		['Deltarune Chapters 3 & 4', new Date('2025-06-04T08:00:00')],
 		['Class of 2025 Graduation', new Date('2025-06-12T00:00:00')],
 		['Windows 10 EOL', new Date('2025-10-14T00:00:00')],
 		['Class of 2026 Graduation', new Date('2026-06-11T00:00:00')],
