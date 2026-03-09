@@ -14,16 +14,10 @@ function App () {
 	const [chosenFormat, setChosenFormat] = useLocalStorageState(0, 'chosenFormat');
 
 	const timeOptions = useMemo(() => [
-		['2025 Kickoff', new Date('2025-01-04T07:00:00')],
-		['LA Regional', new Date('2025-03-14T07:00:00')],
-		['Minecraft Movie Released', new Date('2025-04-04T00:00:00')],
-		['2025 FIRST Championships', new Date('2025-04-15T09:00:00')],
-		['2026 Season Revealed', new Date('2025-04-19T10:00:00')],
-		['Deltarune Chapters 3 & 4', new Date('2025-06-04T08:00:00')],
-		['UCI done', new Date('2025-06-11T15:30:00')],
-		['Mason\'s coping timer', new Date('2025-06-11T16:00:00')],
-		['Class of 2025 Graduation', new Date('2025-06-12T00:00:00')],
-		['Windows 10 EOL', new Date('2025-10-14T00:00:00')],
+		['LA District Event', new Date('2026-03-20T08:00:00')],
+		['OC District Event', new Date('2026-04-02T08:00:00')],
+		['SoCal District Championships', new Date('2026-04-09T08:00:00')],
+		['FIRST Championships', new Date('2026-04-29T08:00:00')],
 		['Class of 2026 Graduation', new Date('2026-06-11T00:00:00')],
 		['Y2K38', new Date('2038-01-19T03:14:08')],
 		['2045 US Eclipse', new Date('2045-08-12T08:12:00')],
