@@ -1,4 +1,4 @@
-name: Deploy React to gh-pages
+name: Build & optionally deploy React
 
 on:
     push:
