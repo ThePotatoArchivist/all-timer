@@ -16,6 +16,7 @@ function App () {
 	const timeOptions = useMemo(() => [
 		['LA District Event', new Date('2026-03-20T08:00:00')],
 		['Digital Circus Ep 8', new Date('2026-03-20T15:00:00')],
+		['Minecraft Live March 2026', new Date('2026-03-21T11:00:00')],
 		['OC District Event', new Date('2026-04-02T08:00:00')],
 		['SoCal District Championships', new Date('2026-04-09T08:00:00')],
 		['FIRST Championships', new Date('2026-04-29T08:00:00')],
