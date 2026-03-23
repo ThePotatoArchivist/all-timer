@@ -14,13 +14,11 @@ function App () {
 	const [chosenFormat, setChosenFormat] = useLocalStorageState(0, 'chosenFormat');
 
 	const timeOptions = useMemo(() => [
-		['LA District Event', new Date('2026-03-20T08:00:00')],
-		['Digital Circus Ep 8', new Date('2026-03-20T15:00:00')],
-		['Minecraft Live March 2026', new Date('2026-03-21T10:00:00')],
 		['OC District Event', new Date('2026-04-02T08:00:00')],
 		['SoCal District Championships', new Date('2026-04-09T08:00:00')],
 		['FIRST Championships', new Date('2026-04-29T08:00:00')],
 		['Class of 2026 Graduation', new Date('2026-06-11T00:00:00')],
+		['Digital Circus Ep 9', new Date('2026-06-19T15:00:00')],
 		['Y2K38', new Date('2038-01-19T03:14:08')],
 		['2045 US Eclipse', new Date('2045-08-12T08:12:00')],
 	] as [name: string, start: Date][], []);
